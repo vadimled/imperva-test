@@ -11,7 +11,10 @@ const Urls = ({urls, onCloseCard}) => {
     <div className={styles["urls-container"]}>
       <div className="title">{selectValue}</div>
       <div className="urls-field">
-        <UrlsField urlCards={urls[selectedKey] || []} onCloseCard={onCloseCard}/>
+        <UrlsField
+          selectedKey={selectedKey}
+          urlCards={urls[selectedKey] || []}
+          onCloseCard={onCloseCard}/>
       </div>
     </div>
   );

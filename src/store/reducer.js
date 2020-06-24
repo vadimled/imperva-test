@@ -1,4 +1,4 @@
-import {updateObjectInArray} from "../utils/helper"
+import {deleteObjectFromArray, updateObjectInArray} from "../utils/helper"
 
 export const initialState = {
   currentSelectedItem: null,
@@ -26,10 +26,17 @@ export const reducer = (state, action) => {
       }
     case 'ADD_NEW_URL':
       const obj = {text: state.urlText};
-      const urlObj = updateObjectInArray(state.urlsList, state.currentSelectedItem, obj);
+      const newUrlListToAdd = updateObjectInArray(state.urlsList, state.currentSelectedItem, obj);
       return {
         ...state,
-        urlsList: [...urlObj],
+        urlsList: [...newUrlListToAdd],
+        urlText : ""
+      }
+    case 'DELETE_URL':
+      const newUrlList = deleteObjectFromArray(state.urlsList, action.payload);
+      return {
+        ...state,
+        urlsList: [...newUrlList],
         urlText : ""
       }
     default:

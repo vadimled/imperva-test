@@ -3,12 +3,17 @@ import styles from './urlsCard.module.scss';
 import PropTypes from 'prop-types';
 import {CloseOutlined} from '@ant-design/icons';
 
-const UrlsCard = ({text, onCloseCard}) => {
-  console.log({text})
+const UrlsCard = ({text, onCloseCard, selectedKey}) => {
+  const onCloseCardHandler = () => {
+    onCloseCard({text, selectedKey});
+  }
   return (
     <div className={styles["urls-card-container"]}>
       <div className="text">{text}</div>
-      <CloseOutlined onClick={onCloseCard} className="icon"/>
+      <CloseOutlined
+        name={text}
+        onClick={onCloseCardHandler}
+        className="icon"/>
     </div>
   );
 }

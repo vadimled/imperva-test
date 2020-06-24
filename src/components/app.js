@@ -23,8 +23,8 @@ function App() {
   const onAddUrl = () => {
     dispatch({type: "ADD_NEW_URL"})
   }
-  const onCloseCard = (e) => {
-    console.log(e)
+  const onCloseCard = data => {
+    dispatch({type: "DELETE_URL", payload: data})
   }
   
   console.log({appState})
