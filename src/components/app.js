@@ -5,6 +5,7 @@ import Portal from "./portal"
 import Header from "./header"
 import {OPTIONS} from "../utils/constants"
 import {initialState, reducer} from "../store/reducer"
+import Urls from "./urls"
 
 function App() {
   const [appState, dispatch] = useReducer(reducer, initialState);
@@ -21,6 +22,9 @@ function App() {
     <div className="container">
       <div className="app">
         <Header options={OPTIONS} onChangeItem={onChangeItem}/>
+        <div className="urls-container">
+          <Urls selectKey={"NOT_EQUALS"}/>
+        </div>
       </div>
       <footer>
         <button className="save-btn" onClick={onSave}>Save</button>
