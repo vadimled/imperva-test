@@ -6,13 +6,12 @@ import UrlsField from "../urlsField"
 
 const Urls = ({urls}) => {
   const selectedKey = Object.keys(urls)[0];
-  console.log({selectedKey, urls})
   const selectValue = OPTIONS.find(item => item.value === selectedKey)?.label;
   return (
     <div className={styles["urls-container"]}>
       <div className="title">{selectValue}</div>
       <div className="urls-field">
-        <UrlsField />
+        <UrlsField urlCards={urls[selectedKey] || []}/>
       </div>
     </div>
   );

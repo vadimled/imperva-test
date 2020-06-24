@@ -2,14 +2,15 @@ import React from 'react';
 import styles from './urlsField.module.scss';
 import PropTypes from 'prop-types';
 
-const UrlsField = () => {
+const UrlsField = ({urlCards}) => {
+  console.log({urlCards})
   return (
     <div className={styles["urls-fields-container"]}>
     </div>
   );
 }
 UrlsField.propTypes = {
-  selectKey: PropTypes.string
+  urlCards: PropTypes.array
 };
 
 
