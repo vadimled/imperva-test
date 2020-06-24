@@ -34,9 +34,14 @@ function App() {
           urlText={appState.urlText}
           onAddUrl={onAddUrl}
           selectedItem={appState.currentSelectedItem}/>
-        <div className="urls-container">
-          <Urls selectKey={"NOT_EQUALS"}/>
-        </div>
+        <div className="urls-container">{
+          appState.urlsList.length > 0 &&
+          appState.urlsList.map((obj, index) => {
+            console.log({obj})
+            return <Urls key={index} selectKey={"NOT_EQUALS"}/>
+          })
+          
+        }</div>
       </div>
       <footer>
         <button className="save-btn" onClick={onSave}>Save</button>
