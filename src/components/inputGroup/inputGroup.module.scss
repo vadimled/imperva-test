@@ -1,0 +1,14 @@
+.input-group-container :global {
+  display: flex;
+  width: 400px;
+  height: 24px;
+  align-items: flex-start;
+  flex-direction: column;
+
+  .error{
+    margin-top: 6px;
+    font-size: 12px;
+    color: darkred;
+  }
+
+}

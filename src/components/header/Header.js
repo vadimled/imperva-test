@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './header.module.scss'
 import {Select} from 'antd';
+import InputGroup from "../inputGroup"
 
 const {Option} = Select;
 
-const Header = ({options, onChangeItem}) => {
+const Header = ({options, onChangeItem, onChangeUrl, urlText}) => {
   
   console.log("Header")
   return (
@@ -18,7 +19,6 @@ const Header = ({options, onChangeItem}) => {
         placeholder="options..."
         optionFilterProp="children"
         onChange={onChangeItem}
-        // onFocus={onFocus}
       >
         {options.map((option, index) => {
           return (
@@ -27,7 +27,7 @@ const Header = ({options, onChangeItem}) => {
         })
         }
       </Select>
-      <input type="text"/>
+      <InputGroup onChangeUrl={onChangeUrl} value={urlText}/>
       <button className="add-btn">Add</button>
     </div>
   );

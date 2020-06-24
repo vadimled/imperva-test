@@ -1,6 +1,7 @@
 export const initialState = {
   currentSelectedItem: null,
-  isModal: false
+  isModal: false,
+  urlText: ""
 }
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -13,6 +14,11 @@ export const reducer = (state, action) => {
       return {
         ...state,
         isModal: !state.isModal
+      }
+    case 'SET_URL_TEXT':
+      return {
+        ...state,
+        urlText: action.payload
       }
     default:
       throw new Error();

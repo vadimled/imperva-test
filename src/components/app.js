@@ -16,12 +16,19 @@ function App() {
   const onChangeItem = item => {
     dispatch({type: "SET_CURRENT_SELECT", payload: item})
   }
+  const onChangeUrl = event => {
+    dispatch({type: "SET_URL_TEXT", payload: event.target.value})
+  }
   
   console.log({appState})
   return (
     <div className="container">
       <div className="app">
-        <Header options={OPTIONS} onChangeItem={onChangeItem}/>
+        <Header
+          options={OPTIONS}
+          onChangeItem={onChangeItem}
+          onChangeUrl={onChangeUrl}
+          urlText={appState.urlText}/>
         <div className="urls-container">
           <Urls selectKey={"NOT_EQUALS"}/>
         </div>
