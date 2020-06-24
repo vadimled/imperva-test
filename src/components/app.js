@@ -1,11 +1,12 @@
 import React, {useReducer} from 'react';
-import '../css/app.scss';
+import './app.module.scss';
 import "antd/dist/antd.css";
 import Portal from "./portal"
 import Header from "./header"
 import {OPTIONS} from "../utils/constants"
 import {initialState, reducer} from "../store/reducer"
 import Urls from "./urls";
+import styles from "./app.module.scss"
 
 function App() {
   const [appState, dispatch] = useReducer(reducer, initialState);
@@ -25,7 +26,7 @@ function App() {
   
   console.log({appState})
   return (
-    <div className="container">
+    <div className={styles["container"]}>
       <div className="app">
         <Header
           options={OPTIONS}
@@ -39,7 +40,6 @@ function App() {
           appState.urlsList.map((obj, index) => {
             return <Urls key={index} urls={obj}/>
           })
-          
         }</div>
       </div>
       <footer>
