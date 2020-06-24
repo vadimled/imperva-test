@@ -10,28 +10,29 @@ const Header = ({options, selectedItem, onChangeItem, onChangeUrl, urlText, onAd
   return (
     <div className={styles["header-container"]}>
       <div className="title">Block URLs</div>
-      
-      <Select
-        showSearch
-        style={{width: 200}}
-        placeholder="options..."
-        optionFilterProp="children"
-        onChange={onChangeItem}
-        value={selectedItem}>
-        {options.map((option, index) => {
-          return (
-            <Option key={index} value={option.value}>{option.label}</Option>
-          );
-        })
-        }
-      </Select>
-      <InputGroup
-        onChangeUrl={onChangeUrl}
-        value={urlText}/>
-      <Button
-        type="primary"
-        onClick={onAddUrl}
-        disabled={!selectedItem || !urlText || urlText === "" || urlText[0] !== '/'}>Add</Button>
+      <div className="action-group">
+        <Select
+          showSearch
+          style={{width: 200}}
+          placeholder="options..."
+          optionFilterProp="children"
+          onChange={onChangeItem}
+          value={selectedItem}>
+          {options.map((option, index) => {
+            return (
+              <Option key={index} value={option.value}>{option.label}</Option>
+            );
+          })
+          }
+        </Select>
+        <InputGroup
+          onChangeUrl={onChangeUrl}
+          value={urlText}/>
+        <Button
+          type="primary"
+          onClick={onAddUrl}
+          disabled={!selectedItem || !urlText || urlText === "" || urlText[0] !== '/'}>Add</Button>
+      </div>
     </div>
   );
 }

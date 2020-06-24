@@ -1,9 +1,10 @@
 .input-group-container :global {
   display: flex;
   width: 400px;
-  height: 30px;
+  height: 33px;
   align-items: flex-start;
   flex-direction: column;
+  margin: 0 10px 0 70px;
 
   .error{
     margin-top: 6px;
