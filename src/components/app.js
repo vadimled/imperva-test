@@ -23,6 +23,9 @@ function App() {
   const onAddUrl = () => {
     dispatch({type: "ADD_NEW_URL"})
   }
+  const onCloseCard = (e) => {
+    console.log(e)
+  }
   
   console.log({appState})
   return (
@@ -38,7 +41,7 @@ function App() {
         <div className="urls-wrapper">{
           appState.urlsList.length > 0 &&
           appState.urlsList.map((obj, index) => {
-            return <Urls key={index} urls={obj}/>
+            return <Urls key={index} urls={obj} onCloseCard={onCloseCard}/>
           })
         }</div>
       </div>

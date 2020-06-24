@@ -1,0 +1,27 @@
+.urls-card-container :global {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 140px;
+  height: 35px;
+  background-color: darkgrey;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 5px 5px 0 5px ;
+
+  .text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 160px;
+    white-space: nowrap;
+    color: white;
+    font-size: 16px;
+    padding-left: 5px;
+  }
+
+  .icon{
+    padding-right: 5px;
+
+  }
+}
