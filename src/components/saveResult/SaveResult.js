@@ -9,7 +9,7 @@ const SaveResult = ({urlsList, onExit}) => {
       <div className="text-area">
         {urlsList.map((item, index) => {
           const
-            regex1 = /(?<=^\{)(.*?)(?=\}$)/gm,
+            regex1 = /(?<=^\{)(.*?)(?=\}$)/gm, // this Regex return all text that inside the curly braces
             res = regex1.exec(JSON.stringify(item).toString())[0];
           
           return <div className="text-area-row" key={index}>{res}</div>
