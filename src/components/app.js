@@ -27,7 +27,7 @@ function App() {
     dispatch({type: "DELETE_URL", payload: data})
   }
   
-  console.log({appState})
+  // console.log({appState})
   return (
     <div className={styles["container"]}>
       <div className="app">

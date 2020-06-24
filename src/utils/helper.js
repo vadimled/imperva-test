@@ -21,7 +21,9 @@ export const deleteObjectFromArray = (array, data) => {
       if (ind > -1) {
         item[selectedKey].splice(ind, 1);
       }
-      return item;
+      if (item[selectedKey].length > 0) {
+        return item;
+      }
     }
     return item
   });

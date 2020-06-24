@@ -17,8 +17,7 @@ const Header = ({options, selectedItem, onChangeItem, onChangeUrl, urlText, onAd
         placeholder="options..."
         optionFilterProp="children"
         onChange={onChangeItem}
-        value={selectedItem}
-      >
+        value={selectedItem}>
         {options.map((option, index) => {
           return (
             <Option key={index} value={option.value}>{option.label}</Option>
@@ -26,7 +25,9 @@ const Header = ({options, selectedItem, onChangeItem, onChangeUrl, urlText, onAd
         })
         }
       </Select>
-      <InputGroup onChangeUrl={onChangeUrl} value={urlText}/>
+      <InputGroup
+        onChangeUrl={onChangeUrl}
+        value={urlText}/>
       <Button
         type="primary"
         onClick={onAddUrl}

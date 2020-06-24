@@ -4,12 +4,11 @@ import PropTypes from 'prop-types';
 import UrlsCard from "../urlsCard"
 
 const UrlsField = ({urlCards, onCloseCard, selectedKey}) => {
-  console.log({urlCards})
   return (
     <div className={styles["urls-fields-container"]}>
-      {urlCards.length > 0 &&
-      urlCards.map(card => {
+      {urlCards.map((card, index) => {
         return <UrlsCard
+          key={index}
           text={card.text}
           onCloseCard={onCloseCard}
           selectedKey={selectedKey}/>

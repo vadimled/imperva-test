@@ -7,6 +7,10 @@ import UrlsField from "../urlsField"
 const Urls = ({urls, onCloseCard}) => {
   const selectedKey = Object.keys(urls)[0];
   const selectValue = OPTIONS.find(item => item.value === selectedKey)?.label;
+
+  if(urls[selectedKey].length === 0){
+    return null;
+  }
   return (
     <div className={styles["urls-container"]}>
       <div className="title">{selectValue}</div>

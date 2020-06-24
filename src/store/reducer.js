@@ -2,9 +2,9 @@ import {deleteObjectFromArray, updateObjectInArray} from "../utils/helper"
 
 export const initialState = {
   currentSelectedItem: null,
-  isModal            : false,
-  urlText            : "",
-  urlsList           : []
+  isModal: false,
+  urlText: "",
+  urlsList: []
 }
 export const reducer = (state, action) => {
   switch (action.type) {
