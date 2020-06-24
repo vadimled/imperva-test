@@ -34,11 +34,10 @@ function App() {
           urlText={appState.urlText}
           onAddUrl={onAddUrl}
           selectedItem={appState.currentSelectedItem}/>
-        <div className="urls-container">{
+        <div className="urls-wrapper">{
           appState.urlsList.length > 0 &&
           appState.urlsList.map((obj, index) => {
-            console.log({obj})
-            return <Urls key={index} selectKey={"NOT_EQUALS"}/>
+            return <Urls key={index} urls={obj}/>
           })
           
         }</div>
