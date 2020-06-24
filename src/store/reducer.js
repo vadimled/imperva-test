@@ -11,7 +11,7 @@ export const reducer = (state, action) => {
     case "SET_CURRENT_SELECT":
       return {
         ...state,
-        urlText            : "",
+        urlText: "",
         currentSelectedItem: action.payload
       }
     case 'SET_MODAL_STATUS':

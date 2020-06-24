@@ -27,5 +27,4 @@ Urls.propTypes = {
   urls: PropTypes.object
 };
 
-
 export default Urls;

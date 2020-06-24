@@ -1,0 +1,39 @@
+.save-result-container :global {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row ;
+  width: 600px;
+  height: 600px;
+  border-radius: 6px;
+  background-color: white;
+  -webkit-box-shadow: 0 6px 9px 0 rgba(0,0,0,0.47);
+  -moz-box-shadow: 0 6px 9px 0 rgba(0,0,0,0.47);
+  box-shadow: 0 6px 9px 0 rgba(0,0,0,0.47);
+
+  .text-area{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 16px;
+    color: #224a46;
+    height: 100%;
+    flex-grow: 1;
+    padding: 12px;
+
+    .text-area-row{
+      margin: 10px;
+    }
+  }
+
+  .icon{
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    flex-grow: 0;
+    font-size: 16px;
+    color: #224a46;
+    cursor: pointer;
+  }
+}

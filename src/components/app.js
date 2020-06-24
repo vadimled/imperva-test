@@ -7,6 +7,8 @@ import {OPTIONS} from "../utils/constants"
 import {initialState, reducer} from "../store/reducer"
 import Urls from "./urls";
 import styles from "./app.module.scss"
+import SaveResult from "./saveResult"
+import {Button} from "antd"
 
 function App() {
   const [appState, dispatch] = useReducer(reducer, initialState);
@@ -26,8 +28,16 @@ function App() {
   const onCloseCard = data => {
     dispatch({type: "DELETE_URL", payload: data})
   }
+  const isListEmpty = () => {
+    if (appState.urlsList.length === 0) {
+      return true;
+    }
+    return appState.urlsList.every(obj => {
+      const key = Object.keys(obj)[0]
+      return obj[key].length === 0
+    });
+  }
   
-  // console.log({appState})
   return (
     <div className={styles["container"]}>
       <div className="app">
@@ -46,14 +56,14 @@ function App() {
         }</div>
       </div>
       <footer>
-        <button className="save-btn" onClick={onSave}>Save</button>
+        <Button className="save-btn" onClick={onSave} disabled={isListEmpty()}>Save</Button>
       </footer>
       
-      {appState.isModal && <Portal>
-        <div className="save-container">
-          <button className="save-btn" onClick={onSave}>Exit</button>
-        </div>
-      </Portal>}
+      {appState.isModal ?
+        <Portal>
+          <SaveResult urlsList={appState.urlsList} onExit={onSave}/>
+        </Portal> : null
+      }
     </div>
   );
 }

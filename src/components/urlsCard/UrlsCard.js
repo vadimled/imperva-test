@@ -11,7 +11,6 @@ const UrlsCard = ({text, onCloseCard, selectedKey}) => {
     <div className={styles["urls-card-container"]}>
       <div className="text">{text}</div>
       <CloseOutlined
-        name={text}
         onClick={onCloseCardHandler}
         className="icon"/>
     </div>
