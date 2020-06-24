@@ -26,7 +26,7 @@ const Header = ({options, onChangeItem, onChangeUrl, urlText, onAddUrl}) => {
         }
       </Select>
       <InputGroup onChangeUrl={onChangeUrl} value={urlText}/>
-      <Button type="primary" onClick={onAddUrl}>Add</Button>
+      <Button type="primary" onClick={onAddUrl} disabled={!urlText || urlText===""}>Add</Button>
     </div>
   );
 }
