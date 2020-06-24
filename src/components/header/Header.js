@@ -5,7 +5,9 @@ import {Select} from 'antd';
 
 const {Option} = Select;
 
-const Header = ({options}) => {
+const Header = ({options, onChangeItem}) => {
+  
+  console.log("Header")
   return (
     <div className={styles["header-container"]}>
       <div className="title">Block URLs</div>
@@ -13,15 +15,10 @@ const Header = ({options}) => {
       <Select
         showSearch
         style={{width: 200}}
-        placeholder="URL is"
+        placeholder="options..."
         optionFilterProp="children"
-        // onChange={onChange}
+        onChange={onChangeItem}
         // onFocus={onFocus}
-        // onBlur={onBlur}
-        // onSearch={onSearch}
-        // filterOption={(input, option) =>
-        //   option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-        // }
       >
         {options.map((option, index) => {
           return (
@@ -29,9 +26,6 @@ const Header = ({options}) => {
           );
         })
         }
-        
-        <Option value="lucy">Lucy</Option>
-        <Option value="tom">Tom</Option>
       </Select>
       <input type="text"/>
       <button className="add-btn">Add</button>
@@ -40,7 +34,8 @@ const Header = ({options}) => {
 }
 
 Header.propTypes = {
-  options: PropTypes.array.isRequired
+  options: PropTypes.array.isRequired,
+  onChangeItem: PropTypes.func.isRequired
 };
 
 export default Header;
