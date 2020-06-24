@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './header.module.scss'
-import {Select} from 'antd';
+import {Button, Select} from 'antd';
 import InputGroup from "../inputGroup"
 
 const {Option} = Select;
 
-const Header = ({options, onChangeItem, onChangeUrl, urlText}) => {
-  
-  console.log("Header")
+const Header = ({options, onChangeItem, onChangeUrl, urlText, onAddUrl}) => {
   return (
     <div className={styles["header-container"]}>
       <div className="title">Block URLs</div>
@@ -28,14 +26,16 @@ const Header = ({options, onChangeItem, onChangeUrl, urlText}) => {
         }
       </Select>
       <InputGroup onChangeUrl={onChangeUrl} value={urlText}/>
-      <button className="add-btn">Add</button>
+      <Button type="primary" onClick={onAddUrl}>Add</Button>
     </div>
   );
 }
 
 Header.propTypes = {
   options: PropTypes.array.isRequired,
-  onChangeItem: PropTypes.func.isRequired
+  onChangeItem: PropTypes.func.isRequired,
+  onChangeUrl: PropTypes.func.isRequired,
+  urlText: PropTypes.string.isRequired
 };
 
 export default Header;

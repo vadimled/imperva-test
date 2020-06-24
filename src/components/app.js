@@ -6,6 +6,7 @@ import Header from "./header"
 import {OPTIONS} from "../utils/constants"
 import {initialState, reducer} from "../store/reducer"
 import Urls from "./urls"
+import {Button} from "antd"
 
 function App() {
   const [appState, dispatch] = useReducer(reducer, initialState);
@@ -19,6 +20,9 @@ function App() {
   const onChangeUrl = event => {
     dispatch({type: "SET_URL_TEXT", payload: event.target.value})
   }
+  const onAddUrl = () => {
+    dispatch({type: "ADD_NEW_URL"})
+  }
   
   console.log({appState})
   return (
@@ -28,7 +32,8 @@ function App() {
           options={OPTIONS}
           onChangeItem={onChangeItem}
           onChangeUrl={onChangeUrl}
-          urlText={appState.urlText}/>
+          urlText={appState.urlText}
+          onAddUrl={onAddUrl}/>
         <div className="urls-container">
           <Urls selectKey={"NOT_EQUALS"}/>
         </div>

@@ -20,6 +20,10 @@ export const reducer = (state, action) => {
         ...state,
         urlText: action.payload
       }
+   case 'ADD_NEW_URL':
+      return {
+        ...state
+      }
     default:
       throw new Error();
   }

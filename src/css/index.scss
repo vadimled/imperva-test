@@ -17,3 +17,13 @@ code {
     cursor: pointer !important;
   }
 }
+.ant-btn-primary{
+  border-radius: 8px !important;
+  border-color:  #224a46 !important;
+  background-color: #224a46 !important;
+
+  &:hover{
+    background-color: #34716b !important;
+    border-color:  #34716b !important;
+  }
+}
