@@ -12,6 +12,9 @@ const SaveResult = ({urlsList, onExit}) => {
             regex1 = /(?<=^\{)(.*?)(?=\}$)/gm, // this Regex return all text that inside the curly braces
             res = regex1.exec(JSON.stringify(item).toString())[0];
           
+          if(item[Object.keys(item)[0]].length === 0){
+            return null;
+          }
           return <div className="text-area-row" key={index}>{res}</div>
         })}
       </div>
