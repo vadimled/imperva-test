@@ -26,16 +26,20 @@ const Header = ({options, onChangeItem, onChangeUrl, urlText, onAddUrl}) => {
         }
       </Select>
       <InputGroup onChangeUrl={onChangeUrl} value={urlText}/>
-      <Button type="primary" onClick={onAddUrl} disabled={!urlText || urlText===""}>Add</Button>
+      <Button
+        type="primary"
+        onClick={onAddUrl}
+        disabled={!urlText || urlText === "" || urlText[0] !== '/'}
+      >Add</Button>
     </div>
   );
 }
 
 Header.propTypes = {
-  options: PropTypes.array.isRequired,
+  options     : PropTypes.array.isRequired,
   onChangeItem: PropTypes.func.isRequired,
-  onChangeUrl: PropTypes.func.isRequired,
-  urlText: PropTypes.string.isRequired
+  onChangeUrl : PropTypes.func.isRequired,
+  urlText     : PropTypes.string.isRequired
 };
 
 export default Header;

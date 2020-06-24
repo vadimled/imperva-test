@@ -1,7 +1,8 @@
 export const initialState = {
   currentSelectedItem: null,
   isModal: false,
-  urlText: ""
+  urlText: "",
+  urlsList: []
 }
 export const reducer = (state, action) => {
   switch (action.type) {
