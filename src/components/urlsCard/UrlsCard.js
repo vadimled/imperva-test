@@ -18,6 +18,7 @@ const UrlsCard = ({text, onCloseCard, selectedKey}) => {
 }
 UrlsCard.propTypes = {
   text: PropTypes.string,
+  selectedKey: PropTypes.string,
   onCloseCard: PropTypes.func
 };
 
