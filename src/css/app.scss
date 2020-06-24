@@ -4,14 +4,34 @@
   height: 100%;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
 
   .app {
     display: flex;
     flex-direction: column;
     width: 90vw;
-    height: 100vh;
-    margin-top: 40px;
-    background-color: beige;
+    height: 90vh;
+    background-color: #eeeeee;
+
+    .save-container{
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      background-color: #224a46;
+    }
+
+  }
+  footer{
+    display: flex;
+    flex-grow: 0;
+    width: 90vw;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #224a46;
 
     .save-btn {
       display: flex;
@@ -23,14 +43,8 @@
       font-weight: bold;
       cursor: pointer;
     }
-
-    .save-container{
-      display: flex;
-      width: 100%;
-      height: 100%;
-      justify-content: center;
-      align-items: center;
-      background-color: #224a46;
-    }
   }
+}
+.ant-select-selection-item{
+  cursor: pointer;
 }
