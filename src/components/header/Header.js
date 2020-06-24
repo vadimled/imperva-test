@@ -6,7 +6,7 @@ import InputGroup from "../inputGroup"
 
 const {Option} = Select;
 
-const Header = ({options, onChangeItem, onChangeUrl, urlText, onAddUrl}) => {
+const Header = ({options, selectedItem, onChangeItem, onChangeUrl, urlText, onAddUrl}) => {
   return (
     <div className={styles["header-container"]}>
       <div className="title">Block URLs</div>
@@ -17,6 +17,7 @@ const Header = ({options, onChangeItem, onChangeUrl, urlText, onAddUrl}) => {
         placeholder="options..."
         optionFilterProp="children"
         onChange={onChangeItem}
+        value={selectedItem}
       >
         {options.map((option, index) => {
           return (
@@ -29,8 +30,7 @@ const Header = ({options, onChangeItem, onChangeUrl, urlText, onAddUrl}) => {
       <Button
         type="primary"
         onClick={onAddUrl}
-        disabled={!urlText || urlText === "" || urlText[0] !== '/'}
-      >Add</Button>
+        disabled={!selectedItem || !urlText || urlText === "" || urlText[0] !== '/'}>Add</Button>
     </div>
   );
 }

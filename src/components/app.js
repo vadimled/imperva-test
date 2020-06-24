@@ -5,8 +5,7 @@ import Portal from "./portal"
 import Header from "./header"
 import {OPTIONS} from "../utils/constants"
 import {initialState, reducer} from "../store/reducer"
-import Urls from "./urls"
-import {Button} from "antd"
+import Urls from "./urls";
 
 function App() {
   const [appState, dispatch] = useReducer(reducer, initialState);
@@ -33,7 +32,8 @@ function App() {
           onChangeItem={onChangeItem}
           onChangeUrl={onChangeUrl}
           urlText={appState.urlText}
-          onAddUrl={onAddUrl}/>
+          onAddUrl={onAddUrl}
+          selectedItem={appState.currentSelectedItem}/>
         <div className="urls-container">
           <Urls selectKey={"NOT_EQUALS"}/>
         </div>
