@@ -4,11 +4,11 @@ import {OPTIONS} from "../../utils/constants"
 import PropTypes from 'prop-types';
 import UrlsField from "../urlsField"
 
-const Urls = ({urls, onCloseCard}) => {
+const Urls = ({urls, onCloseCard, selectedItem}) => {
   const selectedKey = Object.keys(urls)[0];
   const selectValue = OPTIONS.find(item => item.value === selectedKey)?.label;
 
-  if(urls[selectedKey].length === 0){
+  if(urls[selectedKey].length === 0 && selectedKey !== selectedItem){
     return null;
   }
   return (
@@ -24,7 +24,8 @@ const Urls = ({urls, onCloseCard}) => {
   );
 }
 Urls.propTypes = {
-  urls: PropTypes.object
+  urls: PropTypes.object,
+  onCloseCard: PropTypes.func
 };
 
 export default memo(Urls);

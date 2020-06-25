@@ -12,15 +12,13 @@ const Header = ({options, selectedItem, onChangeItem, onChangeUrl, urlText, onAd
       <div className="title">Block URLs</div>
       <div className="action-group">
         <Select
-          showSearch
           style={{width: 200}}
           placeholder="options..."
-          optionFilterProp="children"
           onChange={onChangeItem}
           value={selectedItem}>
           {options.map((option, index) => {
             return (
-              <Option key={index} value={option.value}>{option.label}</Option>
+              <Option key={index} selected={index===0} value={option.value}>{option.label}</Option>
             );
           })
           }

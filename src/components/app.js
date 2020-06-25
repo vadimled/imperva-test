@@ -51,7 +51,11 @@ function App() {
         <div className="urls-wrapper">{
           appState.urlsList.length > 0 &&
           appState.urlsList.map((obj, index) => {
-            return <Urls key={index} urls={obj} onCloseCard={onCloseCard}/>
+            return <Urls
+              key={index}
+              urls={obj}
+              selectedItem={appState.currentSelectedItem}
+              onCloseCard={onCloseCard}/>
           })
         }</div>
       </div>
