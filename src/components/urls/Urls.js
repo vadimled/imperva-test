@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import styles from './urls.module.scss';
 import {OPTIONS} from "../../utils/constants"
 import PropTypes from 'prop-types';
@@ -27,4 +27,4 @@ Urls.propTypes = {
   urls: PropTypes.object
 };
 
-export default Urls;
+export default memo(Urls);

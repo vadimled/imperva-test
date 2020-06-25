@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import styles from './urlsField.module.scss';
 import PropTypes from 'prop-types';
 import UrlsCard from "../urlsCard"
@@ -24,4 +24,4 @@ UrlsField.propTypes = {
   onCloseCard: PropTypes.func
 };
 
-export default UrlsField;
+export default memo(UrlsField);

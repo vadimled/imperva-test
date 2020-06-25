@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import Input from "antd/es/input"
 import styles from "./inputGroup.module.scss";
 import PropTypes from 'prop-types';
@@ -21,4 +21,4 @@ const InputGroup = ({onChangeUrl, value}) => {
 InputGroup.propTypes = {
   value: PropTypes.string
 };
-export default InputGroup;
+export default memo(InputGroup);

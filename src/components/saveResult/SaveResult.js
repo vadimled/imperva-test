@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import styles from './saveResult.module.scss';
 import PropTypes from 'prop-types';
 import {CloseOutlined} from '@ant-design/icons';
@@ -29,4 +29,4 @@ SaveResult.propTypes = {
   onSave: PropTypes.func,
 };
 
-export default SaveResult;
+export default memo(SaveResult);

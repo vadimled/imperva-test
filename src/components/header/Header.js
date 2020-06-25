@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import PropTypes from 'prop-types';
 import styles from './header.module.scss'
 import {Button, Select} from 'antd';
@@ -44,4 +44,4 @@ Header.propTypes = {
   urlText     : PropTypes.string.isRequired
 };
 
-export default Header;
+export default memo(Header);
