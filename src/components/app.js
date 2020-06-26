@@ -10,8 +10,17 @@ import styles from "./app.module.scss"
 import SaveResult from "./saveResult"
 import {Button} from "antd"
 
+function init(initialState) {
+  const selectedKey = OPTIONS[0].value;
+  return {
+    ...initialState,
+    urlsList: [{[selectedKey]:[]}],
+    currentSelectedItem: selectedKey
+  };
+}
+
 function App() {
-  const [appState, dispatch] = useReducer(reducer, initialState);
+  const [appState, dispatch] = useReducer(reducer, initialState, init);
   
   const onSave = () => {
     dispatch({type: "SET_MODAL_STATUS"})
@@ -37,7 +46,6 @@ function App() {
       return obj[key].length === 0
     });
   }
-  
   return (
     <div className={styles["container"]}>
       <div className="app">
@@ -49,7 +57,6 @@ function App() {
           onAddUrl={onAddUrl}
           selectedItem={appState.currentSelectedItem}/>
         <div className="urls-wrapper">{
-          appState.urlsList.length > 0 &&
           appState.urlsList.map((obj, index) => {
             return <Urls
               key={index}
@@ -63,10 +70,10 @@ function App() {
         <Button className="save-btn" onClick={onSave} disabled={isListEmpty()}>Save</Button>
       </footer>
       
-      {appState.isModal ?
+      {appState.isModal &&
         <Portal>
           <SaveResult urlsList={appState.urlsList} onExit={onSave}/>
-        </Portal> : null
+        </Portal>
       }
     </div>
   );

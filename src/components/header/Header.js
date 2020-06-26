@@ -13,9 +13,8 @@ const Header = ({options, selectedItem, onChangeItem, onChangeUrl, urlText, onAd
       <div className="action-group">
         <Select
           style={{width: 200}}
-          placeholder="options..."
           onChange={onChangeItem}
-          value={selectedItem}>
+          value={selectedItem|| options[0].value}>
           {options.map((option, index) => {
             return (
               <Option key={index} selected={index===0} value={option.value}>{option.label}</Option>
@@ -29,7 +28,7 @@ const Header = ({options, selectedItem, onChangeItem, onChangeUrl, urlText, onAd
         <Button
           type="primary"
           onClick={onAddUrl}
-          disabled={!selectedItem || !urlText || urlText === "" || urlText[0] !== '/'}>Add</Button>
+          disabled={!urlText || urlText === "" || urlText[0] !== '/'}>Add</Button>
       </div>
     </div>
   );
